@@ -3,7 +3,7 @@ node('Master') {
 
 	checkout scm
 	
-	dir("folder") {
+	dir("${JENKINS_HOME}/workspace") {
 		bat 'spring-boot-samples\\spring-boot-sample-atmosphere'
 	}
 	
