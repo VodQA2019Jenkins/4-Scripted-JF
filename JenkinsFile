@@ -3,13 +3,10 @@ node('Master') {
 
 	checkout scm
 	
-	
 	bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
-	
 	
     bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean compile test'
 
-    step([$class: 'JUnitResultArchiver', 
-          testResults: 'spring-boot-samples\\spring-boot-sample-atmosphere\\target\\*.*'])
+    archiveArtifacts artifacts: 'output/*.txt'
           
 }
