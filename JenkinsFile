@@ -10,6 +10,6 @@ node('Master') {
     bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean compile test'
 
     step([$class: 'JUnitResultArchiver', 
-          testResults: 'spring-boot-samples\\spring-boot-sample-atmosphere\\target\*.*'])
+          testResults: 'spring-boot-samples\\spring-boot-sample-atmosphere\\target\\*.*'])
           
 }
