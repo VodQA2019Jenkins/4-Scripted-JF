@@ -4,7 +4,7 @@ node('Master') {
 	checkout scm
 	
 	dir('subdir') {
-		bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
+		bat 'spring-boot-samples\\spring-boot-sample-atmosphere'
 	}
 	
     bat 'mvn clean compile test'
