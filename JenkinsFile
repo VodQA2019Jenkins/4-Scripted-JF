@@ -5,8 +5,8 @@ node('Master') {
 	
 	bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
 	
-    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean compile test'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean compile package install test'
 
-    archiveArtifacts artifacts: 'output/*.txt'
+    archiveArtifacts artifacts: 'spring-boot-samples\\spring-boot-sample-atmosphere\\*.jar'
           
 }
