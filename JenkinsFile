@@ -3,8 +3,10 @@ node('Master') {
 
 	checkout scm
 	
-	bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
-
+	dir("folder") {
+		bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
+	}
+	
     bat 'mvn clean compile test'
 
     //step([$class: 'JUnitResultArchiver', 
