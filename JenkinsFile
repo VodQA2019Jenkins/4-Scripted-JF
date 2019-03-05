@@ -2,8 +2,20 @@ node('Master') {
 
 	checkout scm
 	
-	stage 'Maven Clean Compile Package Install Test'
-    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean compile package install test'
+	stage 'Clean'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml clean'
+	
+	stage 'Compile'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml compile'
+	
+	stage 'Package'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml package'
+	
+	stage 'Install'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml install'
+	
+	stage 'Test'
+    bat 'mvn -f spring-boot-samples\\spring-boot-sample-atmosphere\\pom.xml test'
 
 	stage 'Archive Artifacts'
     archiveArtifacts artifacts: 'spring-boot-samples\\spring-boot-sample-atmosphere\\target\\*.jar'
