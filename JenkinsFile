@@ -3,8 +3,8 @@ node('Master') {
 
 	checkout scm
 	
-	dir("${JENKINS_HOME}/workspace") {
-		bat 'spring-boot-samples\\spring-boot-sample-atmosphere'
+	dir("") {
+		bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
 	}
 	
     bat 'mvn clean compile test'
