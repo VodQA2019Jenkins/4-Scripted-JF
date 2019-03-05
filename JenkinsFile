@@ -3,7 +3,7 @@ node('Master') {
 
 	checkout scm
 	
-	dir("folder") {
+	dir('subdir') {
 		bat 'cd spring-boot-samples\\spring-boot-sample-atmosphere'
 	}
 	
